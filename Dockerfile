@@ -1,4 +1,4 @@
-FROM golang
+FROM golang:alpine
 LABEL maintainer="extrawurst"
 COPY data/* /ip2loc/data/
 COPY main.go go.mod go.sum /ip2loc/
