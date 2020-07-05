@@ -1,11 +1,10 @@
 
 ZIP_FILE=ip2location.zip
-DB_TYPE=DB1LITEBIN
-DB_URL=http://www.ip2location.com/download/
 
 update-db:
-	@echo download db using token: ${IP2LOC_TOKEN}
-	@wget "${DB_URL}?token=${IP2LOC_TOKEN}&file=${DB_TYPE}" -O $(ZIP_FILE)
+	@wget "https://download.ip2location.com/lite/IP2LOCATION-LITE-DB1.BIN.ZIP" -O $(ZIP_FILE)
+	@unzip -o $(ZIP_FILE) -d ./data/
+	@wget "https://download.ip2location.com/lite/IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP" -O $(ZIP_FILE)
 	@unzip -o $(ZIP_FILE) -d ./data/
 	@echo updated db
 

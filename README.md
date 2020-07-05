@@ -20,9 +20,11 @@ docker run -p 8080:8080 -e PORT=8080 extrawurst/ip2location
 
 ```
 curl localhost:8080/216.58.208.46
+curl localhost:8080/2001:4860:4860::8888
 ```
 
 this should reply with:
 ```
 US
 ```
+(both being Google.com IPs)
